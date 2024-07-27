@@ -1,4 +1,3 @@
--- excluding the `+` and `*` character, since findOr tests and graphql use them explicitly
 local luaPatternCharacters = "([" .. ("$%^()-[].?"):gsub("(.)", "%%%1") .. "])"
 
 return function(str: string, searchElement: string, fromIndex: number?): number

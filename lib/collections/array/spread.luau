@@ -10,7 +10,7 @@ return function<T>(array: Array<T>, i: number?, j: number?): ...T
   local startIndex = i or 1
   local endIndex = j or #array
   if startIndex > endIndex then
-    return -- Return nothing if start index exceeds end index
+    return
   end
 
   local results = {}

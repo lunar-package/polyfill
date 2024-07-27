@@ -14,7 +14,6 @@ return function<T>(value: { [string]: T } | Array<T> | string): Array<T> | Array
       table.insert(array, keyValue)
     end
   elseif valueType == "string" then
-    -- optimization to avoid rehashing/growth
     local valueStringLength = (value :: string):len()
     array = table.create(valueStringLength)
     for i = 1, valueStringLength do

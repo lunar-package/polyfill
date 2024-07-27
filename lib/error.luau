@@ -13,7 +13,6 @@ Error.__tostring = function(self)
   return getmetatable(Error :: any).__tostring(self)
 end
 
--- ROBLOX NOTE: extracted __createError function so that both Error.new() and Error() can capture the stack trace at the same depth
 local function __createError(message: string?): Error
   local self = (setmetatable({
     name = DEFAULT_NAME,

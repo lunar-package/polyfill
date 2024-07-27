@@ -27,7 +27,6 @@ return function<T, U>(t: Array<T>, callbackFn: callbackFn<T> | callbackFnWithThi
     end
 
     if #t < len then
-      -- don't iterate on removed items, don't iterate more than original length
       len = #t
     end
     k += 1

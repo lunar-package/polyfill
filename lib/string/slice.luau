@@ -5,7 +5,6 @@ local function slice(str: string, startIndexStr: string | number, lastIndexStr: 
   assert(typeof(startIndex) == "number", "startIndexStr should be a number")
 
   if startIndex + strLen < 0 then
-    -- then |start index| is greater than string length
     startIndex = 1
   end
 
@@ -13,12 +12,10 @@ local function slice(str: string, startIndexStr: string | number, lastIndexStr: 
     return ""
   end
 
-  -- if no last index length set, go to str length + 1
   local lastIndex = strLen + 1
   if lastIndexStr ~= nil then
-    -- ROBLOX FIXME: add parseInt to encapsulate this logic and use it here
     local NaN = 0 / 0
-    lastIndex = tonumber(lastIndexStr) or NaN -- this works because 0 is truthy in Lua
+    lastIndex = tonumber(lastIndexStr) or NaN
   end
   assert(typeof(lastIndex) == "number", "lastIndexStr should convert to number")
 
@@ -27,7 +24,6 @@ local function slice(str: string, startIndexStr: string | number, lastIndexStr: 
   end
 
   local startIndexByte = utf8.offset(str, startIndex) :: number
-  -- get char length of charset retunred at offset
   local lastIndexByte = utf8.offset(str, lastIndex) :: number - 1
 
   return string.sub(str, startIndexByte, lastIndexByte)

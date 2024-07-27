@@ -8,7 +8,6 @@ local function gsplit(text: string, pattern: string, plain: boolean?): () -> ...
         ret = string.sub(text, splitStart)
         splitStart = nil :: any
       elseif sepEnd < sepStart then
-        -- Empty separator!
         ret = string.sub(text, splitStart, sepStart)
         if sepStart < length then
           splitStart = sepStart + 1

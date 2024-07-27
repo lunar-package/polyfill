@@ -13,12 +13,10 @@ return function(delayImpl)
       [Status] = SCHEDULED,
     }
 
-    -- delayTime is an optional parameter
     if intervalTime == nil then
       intervalTime = 0
     end
 
-    -- To mimic the JS interface, we're expecting delayTime to be in ms
     local intervalTimeMs = intervalTime / 1000
     local delay_
     delay_ = function()

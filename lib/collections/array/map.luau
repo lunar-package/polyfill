@@ -4,8 +4,6 @@ type Object = t.Object
 type callbackFn<T, U> = (element: T, index: number, array: Array<T>) -> U
 type callbackFnWithThisArg<T, U, V> = (thisArg: V, element: T, index: number, array: Array<T>) -> U
 
--- Implements Javascript's `Array.prototype.map` as defined below
--- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
 return function<T, U, V>(t: Array<T>, callbackFn: callbackFn<T, U> | callbackFnWithThisArg<T, U, V>, thisArg: V?): Array<U>
   if typeof(t) ~= "table" then
     error(string.format("Array.map called on %s", typeof(t)))

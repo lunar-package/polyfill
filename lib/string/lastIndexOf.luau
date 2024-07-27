@@ -13,16 +13,13 @@ local function lastIndexOf(str: string, searchValue: string, fromIndex: number?)
     calculatedFromIndex = strLength
   end
   if searchValue == "" then
-    -- FIXME: Luau DFA doesn't understand that
     return calculatedFromIndex :: number
   end
 
   local lastFoundStartIndex, foundStartIndex
-  -- Luau FIXME: Luau doesn't look beyond assignment for type, it should infer number? from loop bound
   local foundEndIndex: number? = 0
   repeat
     lastFoundStartIndex = foundStartIndex
-    -- Luau FIXME: DFA doesn't understand until clause means foundEndIndex is never nil within loop
     foundStartIndex, foundEndIndex = string.find(str, searchValue, foundEndIndex :: number + 1, true)
   until foundStartIndex == nil or foundStartIndex > calculatedFromIndex
 

@@ -25,11 +25,7 @@ local function concat<T, S>(source: Array<T> | T, ...: Array<S> | S): Array<T> &
     local value = select(i, ...)
     local valueType = typeof(value)
     if value == nil then
-      -- do not insert nil
     elseif valueType == "table" then
-      -- deviation: assume that table is an array, to avoid the expensive
-      -- `isArray` check. In DEV mode, we throw if it is given an object-like
-      -- table.
       if not isArray(value) then
         error(RECEIVED_OBJECT_ERROR)
       end

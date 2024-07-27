@@ -11,10 +11,8 @@ return function(str: string, index: number): number
     return NaN
   end
 
-  -- utf8.offset returns nil for out of bounds
   local offset = utf8.offset(str, index)
 
-  -- check that offset is not greater than the length of the string
   if offset == nil or offset > length then
     return NaN
   end
