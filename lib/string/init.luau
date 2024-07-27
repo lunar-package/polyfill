@@ -1,0 +1,17 @@
+return {
+  charCodeAt = require("./charCodeAt"),
+  endsWith = require("./endsWith"),
+  findOr = require("./findOr"),
+  includes = require("./includes"),
+  indexOf = require("./indexOf"),
+  lastIndexOf = require("./lastIndexOf"),
+  padEnd = require("./padEnd"),
+  padStart = require("./padStart"),
+  slice = require("./slice"),
+  split = require("./split"),
+  startsWith = require("./startsWith"),
+  substr = require("./substr"),
+  trim = require("./trim"),
+  trimEnd = require("./trimEnd"),
+  trimStart = require("./trimStart"),
+}

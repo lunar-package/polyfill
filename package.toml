@@ -1,0 +1,16 @@
+description = "A set of utilities to mimic common JS polyfills needed for translating projects from JS to Lua/Luau"
+files = ["*"]
+keywords = [
+    "luau",
+    "polyfill",
+    "js",
+]
+main = "./lib/init.luau"
+name = "polyfill"
+owner = "lune-package"
+repository = "https://github.com/lune-package/polyfill.git"
+version = "0.1.0"
+
+[dependencies]
+
+[dev_dependencies]
