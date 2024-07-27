@@ -1,7 +1,3 @@
-local t = require("../../types")
-
-export type Array<T> = t.Array<T>
-
 return {
   concat = require("./concat"),
   every = require("./every"),
