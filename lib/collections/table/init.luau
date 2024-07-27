@@ -4,6 +4,6 @@ export type Table<K, V> = t.Table<K, V>
 
 return {
   copy = require("./copy"),
-  reconcile = require("./reconcile"),
+  reconcile = require("./sync"),
   size = require("./size"),
 }
