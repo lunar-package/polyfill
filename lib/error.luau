@@ -2,7 +2,7 @@ local t = require("./types")
 
 type Function = t.Function
 
-export type Error = { name: string, message: string, stack: string? }
+export type Error = { name: string, message: string, stack: string?, throw: (self: Error) -> never }
 type Error_private = Error & { __stack: string? }
 
 local Error = {}
